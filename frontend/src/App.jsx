@@ -3,8 +3,9 @@ import { UploadCloud, File as FileIcon, Download, CheckCircle, AlertCircle } fro
 import './index.css';
 
 const CHUNK_SIZE = 8192; // 8KB chunks as required
-const WS_URL = 'ws://localhost:8080/ws/upload';
-const API_URL = 'http://localhost:8080/api/files';
+const HOST = window.location.hostname || 'localhost';
+const WS_URL = `ws://${HOST}:8080/ws/upload`;
+const API_URL = `http://${HOST}:8080/api/files`;
 
 function App() {
   const [files, setFiles] = useState([]);
